@@ -53,10 +53,6 @@ const GetMovies = ({ movieTitles, sectionName}) => {
                         </Card>
                     ))}
                 </Col>
-                <Col className='Comments'>
-                    {selectedMovieId && <GetComment imdbId={selectedMovieId} />}
-                    {selectedMovieId && <PostComment imdbId={selectedMovieId} />}
-                </Col>
             </Row>
         </Container>
     );

@@ -22,7 +22,7 @@ const MyNavbar = () => {
                 <Nav className="mr-auto">
                     <Link to="/" className="nav-link text-white">Home</Link>
                     <Link to='/tvshows' className="nav-link text-white">TV Shows</Link>
-                    <Link to="/" className="nav-link text-white">Movies</Link>
+                    <Link to="/movies" className="nav-link text-white">Movies</Link>
                     <Link to="/" className="nav-link text-white">Recently Added</Link>
                     <Link to="/" className="nav-link text-white">My List</Link>
                 </Nav>
