@@ -4,6 +4,7 @@ import { Container, Spinner, Card, CardHeader, CardFooter, CardBody, Button } fr
 import { Link, useParams } from 'react-router-dom';
 import GetComment from './GetComment';
 import PostComment from './PostComment';
+import './MovieDetails.css'
 
 const MovieDetails = () => {
     const [movieDetails, setMovieDetails] = useState(null);
@@ -29,12 +30,16 @@ const MovieDetails = () => {
     }
 
     return (
-        <Container>
+        <Container >
             {movieDetails && (
                 <Card>
-                    <CardHeader>{movieDetails.Title}</CardHeader> 
+                    <CardHeader>
+                        <h1>{movieDetails.Title}</h1>
+                    </CardHeader> 
                     <CardBody><img src={movieDetails.Poster} alt={movieDetails.Title} /></CardBody>
-                    <CardFooter>{movieDetails.Plot}</CardFooter> 
+                    <CardFooter>
+                        <p>{movieDetails.Plot}</p>
+                    </CardFooter> 
                     <CardFooter><Link to='/tvshows'><Button>Go Back</Button></Link></CardFooter>
                 </Card>
             )}

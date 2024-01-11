@@ -17,18 +17,15 @@ const GetMovies = ({ movieTitles, sectionName}) => {
             const apiUrl = `http://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`;
             return axios.get(apiUrl);
         });
-
         Promise.all(movieFetch)
             .then(responses => {
                 const movieDataArray = responses.map(response => response.data);
                 setMovieData(movieDataArray);
-
             })
             .catch(error => {
                 console.error("Errore nella richiesta API:", error);
             });
     }, [movieTitles]);
-
     const handleCardClick = (imdbId) => {
         setSelectedMovieId(prevId => {
             console.log('Previous ID:', prevId);
@@ -36,7 +33,6 @@ const GetMovies = ({ movieTitles, sectionName}) => {
             return imdbId;
         });
     };
-
     return (
         <Container>
             <h4 className="text-white">{sectionName}</h4>
@@ -65,6 +61,5 @@ const GetMovies = ({ movieTitles, sectionName}) => {
         </Container>
     );
 }
-
 
 export default GetMovies;
