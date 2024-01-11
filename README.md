@@ -1,7 +1,7 @@
 #Clone Netflix con chiamata API da OMDB, e richieste GET e POST da StriveSchool API  per visualizzare e inviare commenti. 
 
-La pagina TvShows visualizza delle sezioni con film che decido io, cliccando su una singola copertina sulla destra una colonna mostra i commenti e permette di inviarli.
+L'app funziona come l'originale mostrando varie sezionie vari titoli, ho ancora da implementare la lista dei film salvati tra i preferiti.
 
-Ogni scheda film ha un  pulsante dettagli che apre la pagina con il titolo, immagine e plot mentre sotto reinderizza tutti i commenti e da la possibilità di dare una valutazione personale.
+Ogni poster card cliccata ha il tasto vedi dettagli che apre la pagina con il plot del film e la sezione commenti da leggere e anche da poter inviare.
 
 Uso axios, routing, bootstrap, sass
