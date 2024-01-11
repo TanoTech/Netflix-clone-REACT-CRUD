@@ -42,7 +42,7 @@ const GetComment = ({ imdbId}) => {
                 comments.map(comment => (
                     <div key={comment._id}>
                         <p>{comment.author}</p>
-                        <p>{comment.rate}</p>
+                        <p>{"⭐️".repeat(comment.rate)}</p>
                         <p>{comment.comment}</p>
                     </div>
                 ))

@@ -1,11 +1,11 @@
 import React from "react";
-
+import { Button } from 'react-bootstrap';
 class PostComment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       comment: '',
-      ratings: [false, false, false, false, false],
+      rate: 1,
     };
   }
 
@@ -20,24 +20,24 @@ class PostComment extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (this.state.rate <1 || this.state.rate > 5) {
+    if (this.state.rate < 1 || this.state.rate > 5) {
       alert('Il rating deve essere un numero tra 1 a 5')
       return;
     }
-  
-    console.log("IMDB ID:", this.props.imdbID);  
-  
+
+    console.log("IMDB ID:", this.props.imdbID);
+
     const commentData = {
       comment: this.state.comment,
       rate: this.state.rate,
-      elementId: this.props.imdbId,  
+      elementId: this.props.imdbId,
     };
-  
-    console.log("Dati del commento da inviare:", commentData); 
+
+    console.log("Dati del commento da inviare:", commentData);
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTllOWU0MjZlYmM0YjAwMTg1MGYxOTkiLCJpYXQiOjE3MDQ4OTQwMTgsImV4cCI6MTcwNjEwMzYxOH0.EBNrxpBMPhvMsRdCgpJgnbwxy-VC_jKv0Z_FghlAZ3k';
     const apiUrl = 'https://striveschool-api.herokuapp.com/api/comments/';
-    const authToken = `Bearer ${apiKey}`;  
-  
+    const authToken = `Bearer ${apiKey}`;
+
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -47,18 +47,20 @@ class PostComment extends React.Component {
         },
         body: JSON.stringify(commentData),
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       const responseData = await response.json();
+      alert('Comment submitted')
+      this.setState({ comment: '', rate: 1 });
       console.log('Risposta dalla richiesta POST:', responseData);
     } catch (error) {
       console.error('Errore durante la richiesta POST:', error);
     }
   }
-  
+
 
   render() {
     return (
@@ -76,17 +78,20 @@ class PostComment extends React.Component {
             />
           </div>
           <div>
-            <label htmlFor="rate">Rate:</label>
-            <input
-              type="number"
-              id="rate"
+            <label>Rate:</label>
+            <select
               name="rate"
               value={this.state.rate}
               onChange={this.handleRateChange}
-              required
-            />
+            >
+              {[1, 2, 3, 4, 5].map((rating) => (
+                <option key={rating} value={rating}>
+                  {rating}
+                </option>
+              ))}
+            </select>
           </div>
-          <button type="submit">Invia Commento</button>
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     );

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Spinner, Card, CardHeader, CardFooter, CardBody, Button } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import GetComment from './GetComment';
+import PostComment from './PostComment';
 
 const MovieDetails = () => {
     const [movieDetails, setMovieDetails] = useState(null);
@@ -38,6 +39,7 @@ const MovieDetails = () => {
                 </Card>
             )}
             {movieId && <GetComment imdbId={movieId} />}
+            {movieId && <PostComment imdbId={movieId} />}
         </Container>
     );
 }

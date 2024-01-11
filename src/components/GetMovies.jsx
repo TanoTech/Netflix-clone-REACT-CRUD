@@ -4,6 +4,7 @@ import { Col, Container, Row, Card, CardFooter, Button } from 'react-bootstrap';
 import './GetMovies.css'
 import GetComment from './GetComment';
 import {Link} from 'react-router-dom'
+import PostComment from './PostComment'
 
 const GetMovies = ({ movieTitles, sectionName}) => {
     const [movieData, setMovieData] = useState([]);
@@ -58,6 +59,7 @@ const GetMovies = ({ movieTitles, sectionName}) => {
                 </Col>
                 <Col className='Comments'>
                     {selectedMovieId && <GetComment imdbId={selectedMovieId} />}
+                    {selectedMovieId && <PostComment imdbId={selectedMovieId} />}
                 </Col>
             </Row>
         </Container>
