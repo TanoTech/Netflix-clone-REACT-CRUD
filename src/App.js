@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Genres from './components/Genres';
 import MovieDetails from './components/MovieDetails';
+import Movies from './components/Movies';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/tvshows" element={<TvShows />} />
+            <Route path="/movies" element={<Movies />} />
             <Route path="/movie-details/:movieId" element={<MovieDetails />} /> 
           </Routes>
         </main>
