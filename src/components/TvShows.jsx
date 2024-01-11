@@ -12,7 +12,7 @@ const TvShows = () => {
         },
         {
             sectionName: '🤣Comedy🤣',
-            movieTitles: ['Totò, Peppino e la... malafemmina', 'Ricky Gervais: Humanity', 'Dave Chappelle: The Closer', 'The Fresh Prince of Bel-Air', 'American: The Bill Hicks Story', 'Troisi' ]
+            movieTitles: ['Totò, Peppino e la... malafemmina', 'Ricky Gervais: Humanity', 'Dave Chappelle: The Closer', 'The Fresh Prince of Bel-Air', 'American: The Bill Hicks Story', 'Troisi']
         },
         {
             sectionName: '🛸 Lost in Space 🛸',
