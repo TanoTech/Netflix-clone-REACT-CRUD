@@ -45,7 +45,6 @@ const TvShows = () => {
                 {sections.map((section, index) => (
                     <GetMovies key={index} movieTitles={section.movieTitles} sectionName={section.sectionName} imdbId={selectedId} onClick={handleMovieSelection} />
                 ))}
-                {selectedId !== null && <GetComment imdbId={selectedId} />}
             </Row>
         </div>
     );

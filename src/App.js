@@ -8,6 +8,7 @@ import { Container } from 'react-bootstrap';
 import Genres from './components/Genres';
 import MovieDetails from './components/MovieDetails';
 import Movies from './components/Movies';
+import Home from './components/Home'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </section>
         <main>
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/tvshows" element={<TvShows />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/movie-details/:movieId" element={<MovieDetails />} /> 
