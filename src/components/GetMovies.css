@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   @media screen and (min-width:550px){
+    flex-direction: row;
+   }
+}
+
+body{
+    background-color: black;
+    color: white;
+    margin: 1svh 2svw;
+    padding: 0.2rem;
+}
+
+h4 {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem 0.5rem 
+}
+
+col {
+    display: flex;
+    flex-grow: 1;
+}
+
+.flex-wrap {
+    flex-basis: 65%;
+    flex-grow: 1;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    img{
+        object-fit: contain;
+        width: 15em;
+        height: 20em;
+    }
+}
+
+.Comments {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
